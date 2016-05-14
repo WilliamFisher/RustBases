@@ -23,4 +23,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the bases that user has created.
+     */
+    public function bases()
+    {
+        return $this->hasMany('App\Base');
+    }
 }
