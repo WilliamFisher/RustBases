@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Base as Base;
 
-use App\Http\Requests;
-
 class BaseController extends Controller
 {
     /**
