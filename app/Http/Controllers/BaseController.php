@@ -39,7 +39,7 @@ class BaseController extends Controller
             'title' => 'required|string|max:25',
             'shortdescription' => 'required|string|max:140',
             'description' => 'max:300',
-            'imageurl' => 'required|url'
+            'imageurl' => 'required|url',
             ]);
 
         $base = new Base;
