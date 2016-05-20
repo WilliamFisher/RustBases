@@ -35,7 +35,21 @@ class BaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|string|max:25',
+            'shortdescription' => 'required|string|max:140',
+            'description' => 'max:300',
+            'imageurl' => 'required|url'
+            ]);
+
+        $base = new Base;
+        $base->title = $request->title;
+        $base->shortdescription = $request->shortdescription;
+        $base->description = $request->description;
+        $base->imageurl = $request->imageurl;
+        $base->save();
+
+        return redirect()->route('base.index');
     }
 
     /**
