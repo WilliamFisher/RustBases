@@ -2,11 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use DB;
 use Illuminate\Http\Request;
 use App\Base as Base;
 
 class BaseController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => [
+            'index',
+            'show',
+            ]]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +24,9 @@ class BaseController extends Controller
      */
     public function index()
     {
-        return view('bases.index', ['bases' => Base::all()]);
+        $bases = DB::table('bases')->orderBy('view_count', 'desc')->paginate(15);
+
+        return view('bases.index', ['bases' => $bases]);
     }
 
     /**
@@ -44,12 +56,13 @@ class BaseController extends Controller
 
         $base = new Base;
         $base->title = $request->title;
+        $base->user_id = Auth::user()->id;
         $base->shortdescription = $request->shortdescription;
         $base->description = $request->description;
         $base->imageurl = $request->imageurl;
         $base->save();
 
-        return redirect()->route('base.index');
+        return redirect()->route('bases.index');
     }
 
     /**
