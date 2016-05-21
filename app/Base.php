@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Base extends Model
 {
-	protected $fillable = [ 'title', 'shortdescription', 'description', 'imageurl' ];
+    protected $fillable = ['title', 'shortdescription', 'description', 'imageurl'];
+
     /**
      * Get the user that created the base.
      */
