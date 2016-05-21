@@ -44,6 +44,7 @@ class BaseController extends Controller
 
         $base = new Base;
         $base->title = $request->title;
+        $base->userid = Auth::user()->id;
         $base->shortdescription = $request->shortdescription;
         $base->description = $request->description;
         $base->imageurl = $request->imageurl;
