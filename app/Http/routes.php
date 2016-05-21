@@ -19,4 +19,4 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('base', 'BaseController');
+Route::resource('bases', 'BaseController');
