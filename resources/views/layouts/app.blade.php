@@ -48,6 +48,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Dashboard</a></li>
+                    <li><a href="{{ url('/bases') }}">Browse Bases</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
