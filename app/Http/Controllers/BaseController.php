@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use DB;
 use Illuminate\Http\Request;
 use App\Base as Base;
@@ -55,7 +56,7 @@ class BaseController extends Controller
 
         $base = new Base;
         $base->title = $request->title;
-        $base->userid = Auth::user()->id;
+        $base->user_id = Auth::user()->id;
         $base->shortdescription = $request->shortdescription;
         $base->description = $request->description;
         $base->imageurl = $request->imageurl;
