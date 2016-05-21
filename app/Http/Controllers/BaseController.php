@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
 use App\Base as Base;
 
@@ -60,7 +61,7 @@ class BaseController extends Controller
         $base->imageurl = $request->imageurl;
         $base->save();
 
-        return redirect()->route('base.index');
+        return redirect()->route('bases.index');
     }
 
     /**
