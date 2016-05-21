@@ -23,6 +23,7 @@ class BaseController extends Controller
     public function index()
     {
         $bases = DB::table('bases')->orderBy('view_count', 'desc')->paginate(15);
+
         return view('bases.index', ['bases' => $bases]);
     }
 
