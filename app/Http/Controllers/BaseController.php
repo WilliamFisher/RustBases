@@ -22,12 +22,23 @@ class BaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $bases = DB::table('bases')->orderBy('view_count', 'desc')->paginate(15);
+        if($request->input('search') != '')
+        {
+            $search = $request->input('search');
 
-        return view('bases.index', ['bases' => $bases]);
+            $bases = Base::where('title','like','%'.$search. '%')->orderBy('view_count', 'desc')->paginate(15);
+
+            return view('bases.index', ['bases' => $bases]);
+        }else{
+
+            $bases = DB::table('bases')->orderBy('view_count', 'desc')->paginate(15);
+
+            return view('bases.index', ['bases' => $bases]);
+        }
     }
+
 
     /**
      * Show the form for creating a new resource.

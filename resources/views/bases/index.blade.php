@@ -23,6 +23,8 @@
                     </div>
                 @endforeach
                 </div>
+
+                {{ $bases->links() }}
             </div>
         </div>
     </div>
