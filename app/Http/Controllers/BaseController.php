@@ -24,21 +24,18 @@ class BaseController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->input('search') != '')
-        {
+        if ($request->input('search') != '') {
             $search = $request->input('search');
 
-            $bases = Base::where('title','like','%'.$search. '%')->orderBy('view_count', 'desc')->paginate(15);
+            $bases = Base::where('title', 'like', '%'.$search.'%')->orderBy('view_count', 'desc')->paginate(15);
 
             return view('bases.index', ['bases' => $bases]);
-        }else{
-
+        } else {
             $bases = DB::table('bases')->orderBy('view_count', 'desc')->paginate(15);
 
             return view('bases.index', ['bases' => $bases]);
         }
     }
-
 
     /**
      * Show the form for creating a new resource.
