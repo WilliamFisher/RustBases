@@ -13,6 +13,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/rustbases-custom.css">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     <style>
@@ -26,7 +27,7 @@
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-static-top" id="navbar">
         <div class="container">
             <div class="navbar-header">
 
@@ -50,6 +51,18 @@
                     <li><a href="{{ url('/home') }}">Dashboard</a></li>
                     <li><a href="{{ url('/bases') }}">Browse Bases</a></li>
                 </ul>
+
+                <!-- Search In Navbar -->
+                <div class="col-sm-3 col-md-3">
+                    <form class="navbar-form" role="search" method="GET" action="{{ url('bases') }}">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">

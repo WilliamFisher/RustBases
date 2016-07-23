@@ -6,6 +6,12 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
         <style>
+            html {
+                background: url('/img/maintenance.jpg') no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size:cover;
+                -o-background-size:cover;
+            }
             html, body {
                 height: 100%;
             }
@@ -14,7 +20,7 @@
                 margin: 0;
                 padding: 0;
                 width: 100%;
-                color: #B0BEC5;
+                color: #ffffff;
                 display: table;
                 font-weight: 100;
                 font-family: 'Lato';

@@ -7,27 +7,24 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Browse Bases</div>
                 <div class="panel-body">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>View Count</th>
-                                <th>Title</th>
-                                <th>User_ID</th>
-                                <th>Short Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($bases as $base)
-                            <tr>
-                                <td>{{ $base->view_count }}</td>
-                                <td>{{ $base->title }}</td>
-                                <td>{{ $base->user_id }}</td>
-                                <td>{{ $base->shortdescription }}</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                @foreach($bases as $base)
+                    <div class="col-md-4">
+                        <div class="featured-listing">
+                            <a href="{{ url('bases', [$base->id]) }}">
+                                <img class="featured-thumbnail" src="/img/bacon.jpg">
+                            </a>
+                            <div class="overlay">
+                                <p class="listing-name">{{ $base->title }}</p>
+                                <p class="listing-votes">{{ $base->view_count }} Votes</p>
+                                <a class="listing-author" href="#">{{ App\User::find($base->user_id)->name }}</a>
+                                <p class="listing-date">Created {{ Carbon\Carbon::now()->diffForHumans(Carbon\Carbon::parse($base->created_at), true) }} ago</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
                 </div>
+
+                {{ $bases->links() }}
             </div>
         </div>
     </div>
