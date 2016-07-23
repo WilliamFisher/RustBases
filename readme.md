@@ -7,9 +7,9 @@ RustBases is a website created to allow players of the survival game Rust to sub
 ## Goals
 
 - [ ] Core Website [v1.0]
-  - [ ] Beautiful and welcoming homepage with featured base designs.
+  - [x] Beautiful and welcoming homepage with featured base designs.
   - [x] Create new page to submit a base design.
-  - [ ] Browse page with card layout and search function.
+  - [x] Browse page with card layout and search function.
   - [ ] Dashboard to manage created bases.
   - [ ] API with GET methods to return basic data from the bases table.
 - [ ] Social Features [v2.0]
