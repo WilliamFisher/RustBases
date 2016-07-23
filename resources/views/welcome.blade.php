@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Welcome</div>
-
-                <div class="panel-body">
-                    Your Application's Landing Page.
-                </div>
+<div class="wrapper">
+    <div class="landing-header" style="background-image: url('/img/coverimage.jpg');">
+        <div class="container">
+            <div class="motto">
+                <h1>Rust Bases</h1>
+                <h3>Welcome to a collection of base designs for Rust.</h3>
+                <br>
+                <a href="{{ url('/bases') }}" class="btn">Browse Bases</a>
+                <a class="btn">Make a Suggestion</a>
             </div>
         </div>
     </div>
