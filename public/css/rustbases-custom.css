@@ -118,3 +118,6 @@ h1, .h1{
 .panel-default{
     margin-top: 10px;
 }
+.pagination-centered{
+  text-align: center;
+}

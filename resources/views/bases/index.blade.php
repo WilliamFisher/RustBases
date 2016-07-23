@@ -23,8 +23,9 @@
                     </div>
                 @endforeach
                 </div>
-
-                {{ $bases->links() }}
+                <div class="pagination-centered">
+                    {{ $bases->links() }}
+                </div>
             </div>
         </div>
     </div>
