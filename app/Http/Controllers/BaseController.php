@@ -81,7 +81,7 @@ class BaseController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('bases.listing', ['base' => Base::findOrFail($id)]);
     }
 
     /**
@@ -115,6 +115,6 @@ class BaseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }
