@@ -15,7 +15,7 @@
                             </a>
                             <div class="overlay">
                                 <p class="listing-name">{{ $base->title }}</p>
-                                <p class="listing-votes">{{ $base->view_count }} Votes</p>
+                                <p class="listing-votes">{{ $base->view_count }} Views</p>
                                 <a class="listing-author" href="#">{{ App\User::find($base->user_id)->name }}</a>
                                 <p class="listing-date">Created {{ Carbon\Carbon::now()->diffForHumans(Carbon\Carbon::parse($base->created_at), true) }} ago</p>
                             </div>
