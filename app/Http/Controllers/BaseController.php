@@ -115,5 +115,8 @@ class BaseController extends Controller
      */
     public function destroy($id)
     {
+        Base::destroy($id);
+
+        return redirect()->route('bases.index');
     }
 }

@@ -20,9 +20,11 @@
 							<li class="active">
 								<a data-toggle="tab" href="#info">Info</a>
 							</li>
+							@if(Auth::user()->id == $base->user_id)
 							<li>
 								<a data-toggle="tab" href="#edit">Edit</a>
 							</li>
+							@endif
 						</ul>
 
 						<div class="tab-content">
@@ -32,10 +34,18 @@
 								<br>
 								<p>{{ $base->description }}</p>
 							</div>
+							@if(Auth::user()->id == $base->user_id)
 							<div id="edit" class="tab-pane fade">
 								<h4>Edit</h4>
-								<p>This is where you will edit the base or delete it.</p>
+								<form method="POST" action="{{ url('bases/' .$base->id) }}">
+									{{ csrf_field() }}
+									{{ method_field('DELETE') }}
+									<button type="submit" id="delete-base-{{ $base->id }}" class="btn btn-danger">
+                                    	<i class="fa fa-btn fa-trash"></i>Delete
+                                	</button>
+								</form>
 							</div>
+							@endif
 						</div>
 					</div>
 				</div>
