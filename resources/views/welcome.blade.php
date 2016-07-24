@@ -9,7 +9,7 @@
                 <h3>Welcome to a collection of base designs for Rust.</h3>
                 <br>
                 <a href="{{ url('/bases') }}" class="btn">Browse Bases</a>
-                <a class="btn">Make a Suggestion</a>
+                <a href="mailto:lavishgamingcommunity@gmail.com" class="btn">Make a Suggestion</a>
             </div>
         </div>
     </div>

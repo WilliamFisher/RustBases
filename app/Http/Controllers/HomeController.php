@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\User as User;
+
 class HomeController extends Controller
 {
     /**
@@ -21,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $bases = User::find(Auth::user()->id)->bases()->orderBy('view_count', 'desc')->paginate(15);
+
+        return view('home', ['bases' => $bases]);
     }
 }
