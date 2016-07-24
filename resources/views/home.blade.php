@@ -8,7 +8,24 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                @foreach($bases as $base)
+                    <div class="col-md-4">
+                        <div class="featured-listing">
+                            <a href="{{ url('bases', [$base->id]) }}">
+                                <img class="featured-thumbnail" src="{{ $base->imageurl }}">
+                            </a>
+                            <div class="overlay">
+                                <p class="listing-name">{{ $base->title }}</p>
+                                <p class="listing-votes">{{ $base->view_count }} Votes</p>
+                                <a class="listing-author" href="#">{{ App\User::find($base->user_id)->name }}</a>
+                                <p class="listing-date">Created {{ Carbon\Carbon::now()->diffForHumans(Carbon\Carbon::parse($base->created_at), true) }} ago</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                </div>
+                <div class="pagination-centered">
+                    {{ $bases->links() }}
                 </div>
             </div>
         </div>
