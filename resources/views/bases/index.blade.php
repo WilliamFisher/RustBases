@@ -11,7 +11,7 @@
                     <div class="col-md-4">
                         <div class="featured-listing">
                             <a href="{{ url('bases', [$base->id]) }}">
-                                <img class="featured-thumbnail" src="/img/bacon.jpg">
+                                <img class="featured-thumbnail" src="{{ $base->imageurl }}">
                             </a>
                             <div class="overlay">
                                 <p class="listing-name">{{ $base->title }}</p>
