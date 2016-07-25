@@ -19,6 +19,9 @@
     <style>
         body {
             font-family: 'Lato';
+            background-image: url('/img/coverimage.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         .fa-btn {
@@ -54,7 +57,7 @@
 
                 <!-- Search In Navbar -->
                 <div class="col-sm-3 col-md-3">
-                    <form class="navbar-form" role="search" method="GET" action="{{ url('bases') }}">
+                    <form class="navbar-form" role="search" method="GET" action="{{ url('/bases') }}">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search" name="search" id="search">
                             <div class="input-group-btn">

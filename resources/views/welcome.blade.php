@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="wrapper">
-    <div class="landing-header" style="background-image: url('/img/coverimage.jpg');">
         <div class="container">
             <div class="motto">
                 <h1>Rust Bases</h1>
@@ -12,6 +11,5 @@
                 <a href="mailto:lavishgamingcommunity@gmail.com" class="btn">Make a Suggestion</a>
             </div>
         </div>
-    </div>
 </div>
 @endsection
