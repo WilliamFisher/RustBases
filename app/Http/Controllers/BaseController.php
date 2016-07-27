@@ -104,7 +104,21 @@ class BaseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|string|max:25',
+            'shortdescription' => 'required|string|max:140',
+            'description' => 'max:300',
+            'imageurl' => 'required|url',
+            ]);
+
+        $base = Base::find($id);
+        $base->title = $request->title;
+        $base->shortdescription = $request->shortdescription;
+        $base->description = $request->description;
+        $base->imageurl = $request->imageurl;
+        $base->save();
+
+        return back();
     }
 
     /**
