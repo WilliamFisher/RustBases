@@ -97,9 +97,11 @@
 									{{ csrf_field() }}
 									{{ method_field('DELETE') }}
 									<div class="form-group">
-										<button type="submit" id="delete-base-{{ $base->id }}" class="btn btn-danger">
-                                    		<i class="fa fa-btn fa-trash"></i>Delete
-                                		</button>
+										<div class="col-md-6 col-md-offset-4">
+											<button type="submit" id="delete-base-{{ $base->id }}" class="btn btn-danger">
+                                    			<i class="fa fa-btn fa-trash"></i>Delete
+                                			</button>
+                                		</div>
                                 	</div>
 								</form>
 							</div>
