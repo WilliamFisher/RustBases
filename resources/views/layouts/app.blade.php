@@ -22,6 +22,7 @@
             background-image: url('/img/coverimage.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
+            background-position: center;
         }
 
         .fa-btn {
