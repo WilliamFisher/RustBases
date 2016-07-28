@@ -20,7 +20,7 @@
 							<li class="active">
 								<a data-toggle="tab" href="#info">Info</a>
 							</li>
-							@if(Auth::user()->id == $base->user_id)
+							@if(Auth::check() && Auth::user()->id == $base->user_id)
 							<li>
 								<a data-toggle="tab" href="#edit">Edit</a>
 							</li>
@@ -34,7 +34,7 @@
 								<br>
 								<p>{{ $base->description }}</p>
 							</div>
-							@if(Auth::user()->id == $base->user_id)
+							@if(Auth::check() && Auth::user()->id == $base->user_id)
 							<div id="edit" class="tab-pane fade">
 								<h4>Edit</h4>
 								<form method="POST" class="form-horizontal" action="{{ url('bases/' .$base->id) }}">
