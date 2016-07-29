@@ -59,7 +59,8 @@ class BaseController extends Controller
             'title' => 'required|string|max:25',
             'shortdescription' => 'required|string|max:140',
             'description' => 'max:300',
-            'imageurl' => 'required|url',
+            'imageurl' => 'url',
+            'pastebin' => 'url',
             ]);
 
         $base = new Base;
@@ -68,6 +69,7 @@ class BaseController extends Controller
         $base->shortdescription = $request->shortdescription;
         $base->description = $request->description;
         $base->imageurl = $request->imageurl;
+        $base->pastebin = $request->pastebin;
         $base->save();
 
         return redirect()->route('bases.index');
