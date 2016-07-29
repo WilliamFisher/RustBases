@@ -12,7 +12,7 @@
                         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Title</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+                                <input type="text" class="form-control" name="title" maxlength="25" value="{{ old('title') }}">
                                 @if ($errors->has('title'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('title') }}</strong>
@@ -23,7 +23,7 @@
                         <div class="form-group{{ $errors->has('shortdescription') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Short Description</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="shortdescription" value="{{ old('shortdescription') }}">
+                                <input type="text" class="form-control" name="shortdescription" maxlength="140" value="{{ old('shortdescription') }}">
                                 @if ($errors->has('shortdescription'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('shortdescription') }}</strong>
