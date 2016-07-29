@@ -23,6 +23,13 @@
                         </div>
                     </div>
                 @endforeach
+                <div class="col-md-4">
+                    <div class="featured-listing">
+                        <a href="{{ url('/bases/create') }}">
+                            <h3><i class="fa fa-btn fa-edit"></i>Create New Base</h3>
+                        </a>
+                    </div>
+                </div>
                 </div>
                 <div class="pagination-centered">
                     {{ $bases->links() }}
