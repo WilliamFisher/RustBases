@@ -53,6 +53,17 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('pastebin') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Pastebin URL</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="pastebin" value="{{ old('pastebin') }}">
+                                @if ($errors->has('pastebin'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('pastebin') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
