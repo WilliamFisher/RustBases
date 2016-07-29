@@ -33,6 +33,9 @@
 								<p>{{ $base->shortdescription }}</p>
 								<br>
 								<p>{{ $base->description }}</p>
+								<br>
+								<h4>PasteBin Url</h4>
+								<p><a href="{{ $base->pastebin }}">{{ $base->pastebin }}</a></p>
 							</div>
 							@if(Auth::check() && Auth::user()->id == $base->user_id)
 							<div id="edit" class="tab-pane fade">
