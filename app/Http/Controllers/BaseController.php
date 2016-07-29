@@ -68,7 +68,10 @@ class BaseController extends Controller
         $base->user_id = Auth::user()->id;
         $base->shortdescription = $request->shortdescription;
         $base->description = $request->description;
-        $base->imageurl = $request->imageurl;
+        if($request->imageurl != '')
+        {
+            $base->imageurl = $request->imageurl;
+        }
         $base->pastebin = $request->pastebin;
         $base->save();
 
