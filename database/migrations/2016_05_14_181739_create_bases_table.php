@@ -15,7 +15,7 @@ class CreateBasesTable extends Migration
         Schema::create('bases', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('imageurl')->default('img/thumbnaildefault.jpg');
+            $table->string('imageurl')->default('/img/thumbnaildefault.jpg');
             $table->string('title');
             $table->string('shortdescription', 140);
             $table->text('description')->nullable();
